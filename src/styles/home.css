@@ -1,0 +1,45 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.reg-button, .log-button {
+    background-color: #0051f2;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+.reg-button {
+    background-color: #ff6f61;
+    color: white;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.log-button {
+    background-color: #ff6f61;
+    color: white;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.log-button:hover, .reg-button:hover {
+    background-color: white;
+    color:#ff6f61;
+    transform: scale(1.1);
+    font-weight: 700;
+}

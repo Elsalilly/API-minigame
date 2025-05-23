@@ -1,14 +1,26 @@
-import { useState } from 'react';
-import API from "./components/API.jsx";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Game from "./components/game.jsx";
+import Home from "./pages/Home.jsx";
+import Login from "./components/login.jsx";
+import Register from "./components/register.jsx";
+
 import './App.css';
 
 function App() {
 
   return (
-   <div className="game">
-      <API/>
-   </div>
-  )
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/game" element={<Game/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
+      </Routes>
+    </BrowserRouter>
+    </>
+  );
 }
 
 export default App
