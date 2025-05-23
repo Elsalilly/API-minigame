@@ -15,6 +15,17 @@ const Register = () => {
         const newUsername = username.trim();
         const newUserPassword = password.trim();
 
+        //Validation name length and min 4 characters, one letter and one number
+        const isValidUsername = newUsername.length >= 4;
+        const isValidPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/.test(newUserPassword);
+
+        //Check requirements
+        if(!isValidUsername || !isValidPassword) {
+            setAttemptedRegister(true);
+            setRegisterVerify(false);
+            return;
+        }
+
         if (!newUsername || !newUserPassword) {
             setAttemptedRegister(true);
             setRegisterVerify(false);
@@ -57,7 +68,7 @@ const Register = () => {
                 Go Back
             </Link></button>
             {attemptedRegister && !registerVerify && (
-                <h3>Username already exist or fields are empty!</h3>
+                <h3>Username must be atleast 4 characters, password must be 4 characters, atleast one letter and number!</h3>
             )}
         </div>
     );
